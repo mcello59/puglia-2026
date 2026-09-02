@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173f5f">
+<meta name="description" content="Guida offline al viaggio in Puglia, 3–7 ottobre 2026">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<title>Puglia 2026 — Il nostro viaggio</title>
+<style>
+:root{--blue:#173f5f;--blue2:#20639b;--cream:#f7f3ea;--ink:#1f2933;--muted:#68737d;--card:#fff;--line:#e5e0d7;--accent:#c98a3a;--green:#2f7d5a}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(145deg,var(--blue),#0f2d45);color:#fff;padding:28px 18px 22px;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0002}
+header .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;opacity:.75}
+h1{font-size:1.8rem;margin:.25rem 0 .35rem;line-height:1.15}
+header p{margin:0;opacity:.88}
+main{max-width:850px;margin:auto;padding:16px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 16px}
+button,.btn{border:0;border-radius:999px;padding:10px 14px;background:#fff;color:var(--blue);font-weight:700;box-shadow:0 1px 5px #0001;text-decoration:none;display:inline-block}
+button.active{background:var(--blue);color:#fff}
+.daynav{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+.daynav button{border-radius:14px;padding:10px 5px;font-size:.78rem}
+.daynav strong{display:block;font-size:1rem}
+.day{display:none}.day.active{display:block}
+.hero{background:var(--blue2);color:#fff;border-radius:20px;padding:20px;margin-bottom:14px}
+.hero h2{margin:0 0 5px;font-size:1.45rem}
+.hero p{margin:0;opacity:.9}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 3px 14px #243b5310}
+.card h3{margin:.05rem 0 .65rem;color:var(--blue)}
+.timeline{position:relative;margin-left:6px}
+.stop{border-left:3px solid #d7c7ad;padding:0 0 18px 16px;margin-left:5px}
+.stop:last-child{border-left-color:transparent}
+.time{font-size:.78rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.stop h4{margin:.15rem 0 .25rem;font-size:1.05rem}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.tag{font-size:.75rem;padding:4px 8px;border-radius:999px;background:#edf3f7;color:var(--blue)}
+details{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+summary{cursor:pointer;font-weight:750;color:var(--blue)}
+.route{background:#eef4f0;border-left:4px solid var(--green);padding:11px 13px;border-radius:10px;margin:10px 0}
+.food{background:#fff7e9;border-left:4px solid var(--accent);padding:11px 13px;border-radius:10px}
+.mapbox{background:#f0f4f7;border:1px dashed #b9c7d1;border-radius:14px;padding:13px}
+.mapline{font-weight:700;color:var(--blue)}
+.small{font-size:.88rem;color:var(--muted)}
+footer{padding:28px 16px 50px;text-align:center;color:var(--muted);font-size:.82rem}
+.offline{position:fixed;right:12px;bottom:12px;background:var(--green);color:#fff;padding:8px 12px;border-radius:999px;font-size:.78rem;font-weight:700;z-index:10}
+@media(max-width:560px){.daynav{grid-template-columns:repeat(5,1fr)} main{padding:12px} h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">3–7 ottobre 2026 · guida del viaggio</div>
+  <h1>🇮🇹 Puglia 2026</h1>
+  <p>Il nostro viaggio · base ad Andria</p>
+</header>
+
+<main>
+  <div class="toolbar">
+    <button id="installBtn" hidden>📲 Installa app</button>
+    <button id="homeBtn">🏠 Inizio</button>
+  </div>
+
+  <div class="daynav" aria-label="Giorni del viaggio">
+    <button data-day="d1" class="active"><strong>03</strong>Trani</button>
+    <button data-day="d2"><strong>04</strong>Castel + Bari</button>
+    <button data-day="d3"><strong>05</strong>Polignano + Monopoli</button>
+    <button data-day="d4"><strong>06</strong>Valle d'Itria</button>
+    <button data-day="d5"><strong>07</strong>Andria + volo</button>
+  </div>
+
+  <section id="d1" class="day active">
+    <div class="hero"><h2>Sabato 3 ottobre — Bari → Andria → Trani</h2><p>Arrivo, sistemazione e prima passeggiata sul mare.</p></div>
+    <div class="card"><h3>🚗 Percorso</h3><div class="route">Bari Aeroporto → Andria → Trani → Andria</div><p class="small">Arrivo 12:55. Ritiro auto, trasferimento ad Andria, deposito bagagli e partenza per Trani.</p></div>
+    <div class="card"><h3>🕐 Programma</h3><div class="timeline">
+      <div class="stop"><div class="time">12:55</div><h4>Arrivo a Bari</h4><p>Ritiro dell'auto a noleggio. Considerate circa 40–60 minuti per uscire dall'aeroporto.</p></div>
+      <div class="stop"><div class="time">14:15 circa</div><h4>Andria</h4><p>Trasferimento in hotel, consegna bagagli e breve pausa.</p></div>
+      <div class="stop"><div class="time">15:30</div><h4>Trani</h4><p>Porto → Piazza della Libertà → Cattedrale → Castello Svevo → centro storico → Via Ognissanti.</p></div>
+      <div class="stop"><div class="time">19:30</div><h4>🍴 Cena a Trani</h4><p>Prima scelta: Trattoria da Rosetta. Alternative: Trattoria La Casalinga, Osteria Caccianferno o Pizzeria 4 Stagioni.</p></div>
+      <div class="stop"><div class="time">20:30 circa</div><h4>Rientro ad Andria</h4><p>Circa 25 minuti in auto.</p></div>
+    </div></div>
+    <div class="card"><h3>🏛️ Trani — storia e arte</h3>
+      <p><b>Cattedrale di San Nicola Pellegrino.</b> È uno dei capolavori del romanico pugliese, costruita nella locale pietra di Trani e affacciata direttamente sul mare. Sotto l'edificio attuale si trovano strutture più antiche, tra cui Santa Maria della Scala e la cripta legata al culto di San Nicola Pellegrino.</p>
+      <p><b>San Nicola Pellegrino.</b> Secondo la tradizione era un giovane pellegrino greco morto a Trani nel 1094; il suo culto si diffuse rapidamente e divenne patrono della città.</p>
+      <p><b>Castello Svevo.</b> Fu voluto da Federico II nel XIII secolo come fortificazione strategica sul mare. La posizione permette di capire immediatamente il rapporto fra difesa, porto e traffici marittimi.</p>
+      <p><b>Via Ognissanti e il porto.</b> Sono il volto mercantile della Trani medievale: vicoli, palazzi e chiese raccontano una città proiettata verso il commercio adriatico e il Mediterraneo.</p>
+      <details><summary>⭐ Curiosità da raccontare</summary><p>La cattedrale sembra quasi nascere dall'acqua: la sua posizione sul porto non è solo scenografica, ma esprime il ruolo marittimo della città medievale. Cercate inoltre la differenza di luce fra la facciata in pietra e il mare: è uno dei punti più fotogenici dell'itinerario.</p></details>
+    </div>
+    <div class="card"><h3>🍝 Dove mangiare</h3><div class="food"><b>Trattoria da Rosetta</b> — scelta principale, cucina tradizionale e informale.<br><b>Alternative:</b> Trattoria La Casalinga · Osteria Caccianferno · Pizzeria 4 Stagioni.</div></div>
+    <div class="mapbox"><div class="mapline">📍 Mappa</div><p>Per la navigazione stradale usa Google Maps o Organic Maps. I collegamenti esterni richiedono connessione.</p>
+      <a class="btn" href="https://www.google.com/maps/dir/Bari+Airport/Andria/Trani/Andria" target="_blank" rel="noopener">Apri percorso</a>
+    </div>
+  </section>
+
+  <section id="d2" class="day">
+    <div class="hero"><h2>Domenica 4 ottobre — Castel del Monte → Bari</h2><p>Federico II al mattino, Bari Vecchia nel pomeriggio.</p></div>
+    <div class="card"><h3>🚗 Percorso</h3><div class="route">Andria → Castel del Monte → Bari → Andria</div></div>
+    <div class="card"><h3>🕐 Programma</h3><div class="timeline">
+      <div class="stop"><div class="time">09:00</div><h4>Partenza da Andria</h4></div>
+      <div class="stop"><div class="time">09:30–11:30</div><h4>🏰 Castel del Monte</h4><p>Visita dell'esterno, cortile e sale interne.</p></div>
+      <div class="stop"><div class="time">12:15</div><h4>Partenza per Bari</h4></div>
+      <div class="stop"><div class="time">13:15</div><h4>🍴 Pranzo a Bari</h4><p>Antò Cucina Tipica Pugliese oppure La Cantina dello Zio. Per uno spuntino economico: Panificio Santa Rita o Panificio Fiore.</p></div>
+      <div class="stop"><div class="time">14:30–19:00</div><h4>Bari Vecchia</h4><p>Basilica San Nicola → Strada delle Orecchiette → Cattedrale San Sabino → Castello Svevo → Piazza Mercantile → Piazza del Ferrarese → Lungomare.</p></div>
+      <div class="stop"><div class="time">19:00</div><h4>🍴 Cena / aperitivo</h4><p>Antò, La Cantina dello Zio, La Locanda dell'Elfo, Donna Carmela o Osteria del Borgo.</p></div>
+    </div></div>
+    <div class="card"><h3>🏰 Castel del Monte — storia e arte</h3>
+      <p>Costruito nella prima metà del XIII secolo per Federico II e documentato come completato intorno al 1240, il castello è patrimonio UNESCO dal 1996.</p>
+      <p>La sua pianta è un ottagono perfetto: otto torri, otto sale per piano e un cortile ottagonale. L'ottagono è uno degli elementi più riconoscibili dell'edificio; le interpretazioni simboliche sul numero 8 sono affascinanti, ma vanno considerate interpretazioni e non certezze storiche.</p>
+      <p>L'architettura combina riferimenti classici, elementi del mondo islamico e cultura costruttiva europea del XIII secolo. Non è corretto ridurlo alla semplice idea di “fortezza”: aveva anche funzioni residenziali e rappresentative.</p>
+      <details><summary>⭐ Cosa osservare</summary><p>Guardate l'edificio prima nel suo insieme e poi cercate la ripetizione dell'ottagono. All'interno osservate la geometria delle volte, le scale e il rapporto fra luce, cortile e sale.</p></details>
+    </div>
+    <div class="card"><h3>🏛️ Bari Vecchia</h3>
+      <p><b>Basilica di San Nicola.</b> Costruita fra 1087 e 1197, custodisce le reliquie di San Nicola, portate a Bari da marinai baresi nel 1087 da Myra. È uno dei luoghi più importanti dell'incontro fra cristianità occidentale e orientale.</p>
+      <p><b>Strada delle Orecchiette.</b> Non è un museo: è una tradizione gastronomica viva. Le massaie preparano la pasta nelle strade e nelle soglie delle case, rendendo visibile una parte della cultura quotidiana barese.</p>
+      <p><b>Cattedrale di San Sabino.</b> Altro grande esempio del romanico pugliese, da confrontare con San Nicola.</p>
+      <p><b>Castello Svevo.</b> Il nucleo normanno fu ampliato e trasformato sotto Federico II; nei secoli successivi fu adattato alle nuove esigenze difensive.</p>
+      <details><summary>⭐ Curiosità su San Nicola</summary><p>La figura di San Nicola è all'origine della lunga evoluzione culturale che ha portato al moderno Babbo Natale. A Bari, però, il culto conserva una dimensione religiosa molto più antica e internazionale.</p></details>
+    </div>
+    <div class="card"><h3>🍴 Dove mangiare a Bari</h3><div class="food"><b>Antò Cucina Tipica Pugliese</b> · <b>La Cantina dello Zio</b><br>Alternative: La Locanda dell'Elfo · Panificio Santa Rita · Panificio Fiore · Trattoria Donna Carmela · Osteria del Borgo.</div></div>
+    <div class="mapbox"><div class="mapline">📍 Mappa</div><a class="btn" href="https://www.google.com/maps/dir/Andria/Castel+del+Monte,+Andria/Bari/Andria" target="_blank" rel="noopener">Apri percorso</a></div>
+  </section>
+
+  <section id="d3" class="day">
+    <div class="hero"><h2>Lunedì 5 ottobre — Polignano a Mare → Monopoli</h2><p>Scogliere, centro storico e due città di mare molto diverse.</p></div>
+    <div class="card"><h3>🚗 Percorso</h3><div class="route">Andria → Polignano a Mare → Monopoli → Andria</div></div>
+    <div class="card"><h3>🕐 Programma</h3><div class="timeline">
+      <div class="stop"><div class="time">08:30</div><h4>Partenza da Andria</h4></div>
+      <div class="stop"><div class="time">09:45–12:45</div><h4>🌊 Polignano a Mare</h4><p>Lama Monachile → Ponte → Arco Marchesale → centro storico → balconi panoramici → Piazza Vittorio Emanuele II.</p></div>
+      <div class="stop"><div class="time">13:00</div><h4>🍴 Pranzo</h4><p>Antica Trattoria Comes. Alternative: La Locanda Porta Picc, Pescheria Da Pasqualino, La Rotellina o Cucina di Ventura.</p></div>
+      <div class="stop"><div class="time">14:30</div><h4>🚗 Trasferimento a Monopoli</h4></div>
+      <div class="stop"><div class="time">14:50–18:30</div><h4>⚓ Monopoli</h4><p>Porto Vecchio → Castello Carlo V → Bastione → Cattedrale Madonna della Madia → Piazza Garibaldi → Portavecchia.</p></div>
+      <div class="stop"><div class="time">19:00</div><h4>🍴 Cena</h4><p>Coppino Monopoli. Alternative: Al Vicoletto, La Locanda dei Mercanti, Magnapulia o The King Street Food.</p></div>
+    </div></div>
+    <div class="card"><h3>🌊 Polignano — storia e curiosità</h3>
+      <p>La città nasce su una spettacolare scogliera calcarea e ha conosciuto influenze greche, romane, bizantine, normanne e veneziane.</p>
+      <p><b>Lama Monachile</b> è una lama naturale che termina nella Cala Porto. Il centro storico si sviluppa sopra le rocce, sfruttando la posizione come difesa naturale.</p>
+      <p><b>Arco Marchesale</b> era l'accesso principale alla città; cercate i segni della funzione difensiva e immaginate l'antico sistema di ingresso.</p>
+      <p><b>Domenico Modugno</b>, autore e interprete di “Volare”, è ricordato dalla statua sul lungomare. Le poesie dipinte o scritte sui muri sono diventate una caratteristica contemporanea della città.</p>
+      <details><summary>⭐ Piccola curiosità</summary><p>La Casa dell'Orologio nel centro storico conserva una tradizione particolare: l'orologio è tradizionalmente caricato a mano. Cercate anche i piccoli balconi affacciati sul vuoto: sono uno dei tratti più caratteristici di Polignano.</p></details>
+    </div>
+    <div class="card"><h3>⚓ Monopoli — storia e arte</h3>
+      <p>Il nome è tradizionalmente collegato al greco <i>Monos Polis</i>, “città unica”. La città ha avuto un'importante storia portuale e commerciale, con forti rapporti con il Mediterraneo orientale.</p>
+      <p><b>Castello Carlo V</b> è una fortificazione cinquecentesca legata alla difesa costiera nell'epoca spagnola, quando la minaccia delle incursioni era concreta.</p>
+      <p><b>Muraglia e bastioni</b> raccontano la trasformazione della città in una piazzaforte marittima.</p>
+      <p><b>Cattedrale della Madonna della Madia</b>: fondata nel Medioevo e profondamente ricostruita nel Settecento, è uno dei grandi episodi del barocco locale.</p>
+      <details><summary>⭐ Curiosità della Madonna della Madia</summary><p>La tradizione della città lega la storia della cattedrale all'arrivo miracoloso dell'icona della Madonna della Madia, approdata nel porto su una zattera.</p></details>
+    </div>
+    <div class="card"><h3>🍴 Dove mangiare</h3><div class="food"><b>Polignano:</b> Antica Trattoria Comes · La Locanda Porta Picc · La Rotellina.<br><b>Monopoli:</b> Coppino · Al Vicoletto · La Locanda dei Mercanti · Magnapulia.</div></div>
+    <div class="mapbox"><div class="mapline">📍 Mappa</div><a class="btn" href="https://www.google.com/maps/dir/Andria/Polignano+a+Mare/Monopoli/Andria" target="_blank" rel="noopener">Apri percorso</a></div>
+  </section>
+
+  <section id="d4" class="day">
+    <div class="hero"><h2>Martedì 6 ottobre — Martina Franca → Locorotondo → Cisternino</h2><p>La giornata della Valle d'Itria: barocco, cummerse, case bianche e bombette.</p></div>
+    <div class="card"><h3>🚗 Percorso</h3><div class="route">Andria → Martina Franca → Locorotondo → Cisternino → Andria</div></div>
+    <div class="card"><h3>🕐 Programma</h3><div class="timeline">
+      <div class="stop"><div class="time">08:30</div><h4>Partenza da Andria</h4></div>
+      <div class="stop"><div class="time">10:00–13:30</div><h4>🏛️ Martina Franca</h4><p>Centro storico → Basilica San Martino → Palazzo Ducale → chiese e palazzi barocchi.</p></div>
+      <div class="stop"><div class="time">13:00 circa</div><h4>🍴 Pranzo</h4><p>Scegliete una trattoria o gastronomia del centro; tenete il pranzo agile per avere tempo nei tre borghi.</p></div>
+      <div class="stop"><div class="time">14:15–16:00</div><h4>🏘️ Locorotondo</h4><p>Porta Napoli → centro storico → San Giorgio → cummerse → belvedere sulla Valle d'Itria.</p></div>
+      <div class="stop"><div class="time">16:15–18:00</div><h4>🏘️ Cisternino</h4><p>Centro storico, archi, cortili, passaggi e piazze.</p></div>
+      <div class="stop"><div class="time">19:30</div><h4>🔥 Cena in braceria</h4><p>Serata dedicata alle bombette: carne alla brace, salsiccia, verdure e vino locale.</p></div>
+    </div></div>
+    <div class="card"><h3>🏛️ Martina Franca</h3>
+      <p>È uno dei grandi centri barocchi e rococò della Valle d'Itria. La <b>Basilica di San Martino</b>, nella forma attuale, nasce dopo il terremoto del 1743: la prima pietra fu posta nel 1747. La facciata e gli interni mostrano il passaggio dal barocco al rococò.</p>
+      <p><b>Palazzo Ducale</b> fu voluto da Petracone V Caracciolo nel Seicento sulle strutture del precedente castello. Gli ambienti interni conservano cicli decorativi ispirati all'Arcadia, alla mitologia e alla Bibbia.</p>
+      <details><summary>⭐ Cosa osservare</summary><p>Cercate le facciate ricche ma non monumentali come quelle di una grande capitale: a Martina il barocco si adatta alla scala del centro urbano, creando una sequenza continua di portali, balconi e decorazioni.</p></details>
+    </div>
+    <div class="card"><h3>🏘️ Locorotondo</h3>
+      <p>Il centro storico è celebre per le <b>cummerse</b>: abitazioni con tetti inclinati realizzati con lastre di pietra. Non sono trulli: la differenza costruttiva è importante.</p>
+      <p>Il nome della città è legato alla forma circolare dell'antico insediamento. Dal bordo del centro storico si aprono viste sulla Valle d'Itria.</p>
+      <details><summary>⭐ Da fotografare</summary><p>Le strade bianche, i tetti delle cummerse e il panorama sono il trio migliore. Guardate le coperture dall'alto: la loro geometria è uno dei caratteri distintivi del borgo.</p></details>
+    </div>
+    <div class="card"><h3>🏘️ Cisternino</h3>
+      <p>Il centro storico è un esempio di architettura spontanea: archi, scale, passaggi coperti, piccoli cortili e case bianche costruiscono uno spazio urbano quasi labirintico.</p>
+      <p>La sera è il momento giusto per viverlo: il borgo cambia atmosfera e la tradizione delle <b>macellerie-bracerie</b> diventa parte dell'esperienza.</p>
+      <details><summary>⭐ Tradizione gastronomica</summary><p>La <b>bombetta</b> è un piccolo involtino di carne, generalmente di maiale, spesso ripieno o condito con formaggio e aromi. Viene cotto alla brace: ordinate bombette, salsiccia e verdure e lasciatevi consigliare dal macellaio.</p></details>
+    </div>
+    <div class="card"><h3>🍴 Dove mangiare</h3><div class="food"><b>Cisternino:</b> Al Vecchio Fornello · Zio Pietro · Macelleria Braceria Soleti · Macelleria Braceria del Corso · Osteria Piatti Chiari · Trattoria Bère Vecchie.<br><b>Locorotondo:</b> Bespoke Puglia · Il Piccio · Osteria Il Rosone · U Curdunn · Braceria Pietranuda.</div></div>
+    <div class="mapbox"><div class="mapline">📍 Mappa</div><a class="btn" href="https://www.google.com/maps/dir/Andria/Martina+Franca/Locorotondo/Cisternino/Andria" target="_blank" rel="noopener">Apri percorso</a></div>
+  </section>
+
+  <section id="d5" class="day">
+    <div class="hero"><h2>Mercoledì 7 ottobre — Andria → Bari Aeroporto → Torino</h2><p>Ultima mattina senza correre, poi riconsegna dell'auto.</p></div>
+    <div class="card"><h3>🚗 Percorso</h3><div class="route">Hotel Andria → centro di Andria → Bari Aeroporto → Torino</div></div>
+    <div class="card"><h3>🕐 Programma</h3><div class="timeline">
+      <div class="stop"><div class="time">08:30–11:00</div><h4>🏛️ Andria</h4><p>Cattedrale Santa Maria Assunta → Piazza Catuma → San Domenico → San Francesco, se il tempo lo consente.</p></div>
+      <div class="stop"><div class="time">11:00–11:30</div><h4>☕ Ultima pausa</h4><p>Caffè, dolce o piccolo assaggio locale.</p></div>
+      <div class="stop"><div class="time">11:30–12:45</div><h4>🚗 Andria → aeroporto</h4><p>Partenza con margine per traffico e rifornimento.</p></div>
+      <div class="stop"><div class="time">13:00–13:15</div><h4>✈️ Bari Aeroporto</h4><p>Riconsegna dell'auto e procedure aeroportuali.</p></div>
+      <div class="stop"><div class="time">17:35</div><h4>✈️ Volo Bari → Torino</h4></div>
+    </div></div>
+    <div class="card"><h3>🏛️ Andria — storia e arte</h3>
+      <p>Andria ha origini antiche e una forte impronta medievale. Nel 1046 Pietro I la fortificò; sotto Federico II la città acquistò ulteriore importanza e il territorio fu legato alla costruzione di Castel del Monte.</p>
+      <p><b>Cattedrale Santa Maria Assunta.</b> Conserva la Sacra Spina e il culto di San Riccardo. Nella cripta sono sepolte due mogli di Federico II, Jolanda di Brienne e Isabella d'Inghilterra.</p>
+      <p><b>San Domenico e San Francesco.</b> Insieme alla Cattedrale contribuiscono alla tradizionale immagine di Andria come “città dei tre campanili”.</p>
+      <p>Se rimane tempo, la <b>Basilica di Santa Maria dei Miracoli</b> è un'ottima aggiunta: il complesso si sviluppa su più livelli, con un antico ambiente rupestre e successive costruzioni religiose.</p>
+      <details><summary>⭐ Ultime curiosità</summary><p>Andria è legata anche alla cultura dell'olio extravergine, alla Coratina, al Nero di Troia e alla tradizione dei confetti. La burrata è un prodotto nato nell'area pugliese nei primi decenni del Novecento.</p></details>
+    </div>
+    <div class="card"><h3>🎒 Prima di partire</h3><ul><li>Controllare documenti e biglietti.</li><li>Fare rifornimento prima della riconsegna dell'auto.</li><li>Lasciare un margine ampio per la riconsegna.</li><li>Tenere a portata di mano il codice della prenotazione del volo.</li></ul></div>
+    <div class="mapbox"><div class="mapline">📍 Mappa</div><a class="btn" href="https://www.google.com/maps/dir/Andria/Bari+International+Airport" target="_blank" rel="noopener">Andria → aeroporto</a></div>
+  </section>
+
+  <div class="card">
+    <h3>📴 Modalità offline</h3>
+    <p>Questa app è progettata come PWA: dopo averla aperta online e installata, i contenuti principali vengono salvati sul dispositivo tramite il service worker. In assenza di rete continueranno a funzionare testi, programma e sezioni interne. I pulsanti che aprono Google Maps richiedono invece la connessione, salvo che abbiate già scaricato le mappe nell'app di navigazione.</p>
+    <p><b>Consiglio:</b> prima di partire aprite una volta tutti i 5 giorni mentre siete sotto Wi‑Fi.</p>
+  </div>
+</main>
+
+<div class="offline" id="status">● Online</div>
+<footer>Puglia 2026 · guida privata del viaggio · versione 1.0</footer>
+
+<script>
+const buttons=[...document.querySelectorAll('.daynav button')];
+const days=[...document.querySelectorAll('.day')];
+function showDay(id){
+  days.forEach(d=>d.classList.toggle('active',d.id===id));
+  buttons.forEach(b=>b.classList.toggle('active',b.dataset.day===id));
+  history.replaceState(null,'','#'+id);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+buttons.forEach(b=>b.addEventListener('click',()=>showDay(b.dataset.day)));
+document.getElementById('homeBtn').addEventListener('click',()=>showDay('d1'));
+const initial=location.hash.replace('#','');
+if(days.some(d=>d.id===initial)) showDay(initial);
+
+let deferredPrompt;
+const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;});
+installBtn.addEventListener('click',async()=>{
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt=null; installBtn.hidden=true;
+});
+function updateStatus(){
+  const el=document.getElementById('status');
+  el.textContent=navigator.onLine?'● Online':'● Offline';
+  el.style.background=navigator.onLine?'#2f7d5a':'#8b5a2b';
+}
+window.addEventListener('online',updateStatus); window.addEventListener('offline',updateStatus); updateStatus();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
