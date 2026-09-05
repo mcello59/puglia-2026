@@ -1,4 +1,4 @@
-const CACHE='puglia-2026-v26';
+const CACHE='puglia-2026-v27';
 const ASSETS=['./','./index.html','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 const PHOTOS=[
   'https://commons.wikimedia.org/wiki/Special:Redirect/file/Trani_-_Cattedrale_di_Trani_-.jpg',
