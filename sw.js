@@ -1,4 +1,4 @@
-const CACHE='puglia-2026-v24';
+const CACHE='puglia-2026-v25';
 const ASSETS=['./','./index.html','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 
 // Foto della galleria: vengono scaricate una volta e salvate nella cache del PWA.
